@@ -1,0 +1,683 @@
+<html>
+    <head>
+        <title>Web Page</title>
+        <style>
+            img{
+                height : 100%;
+                width : 100%;
+            }
+            .header{
+                height : 100px;
+                background-color: lavender;
+                border-radius: 10px;
+            }
+            .logo{
+                margin-top:10px;
+                margin-left : 5px;
+                width : 100px;
+                height :80px;
+            }
+            .btn1{
+                position: absolute;
+                height : 50px;
+                width :50px;
+                top : 35px;
+                right:30px;
+                border-radius: 10px;
+                z-index:1;
+            }
+            .btn2{
+                display: none;
+                position: absolute;
+                top : 37px;
+                right : 120px;
+                background-color: indigo;
+                padding-left:50px;
+                padding-right : 50px;
+                padding-top : 15px;
+                padding-bottom: 15px;
+                color: white;
+                border-radius: 10px;
+            }
+            .btn2:hover{
+                border-color: white;
+                box-shadow: 0px 0px 30px white;
+            }
+            .btn3{
+                display: none;
+                position: absolute;
+                top : 37px;
+                right : 300px;
+                background-color: indigo;
+                padding-left:50px;
+                padding-right : 50px;
+                padding-top : 15px;
+                padding-bottom: 15px;
+                color: white;
+                border-radius: 10px;
+            }
+            .btn3:hover{
+                border-color: white;
+                box-shadow: 0px 0px 30px white;
+            }
+            .btn4{
+                display: none;
+                position: absolute;
+                top : 37px;
+                right : 500px;
+                background-color: indigo;
+                padding-left:50px;
+                padding-right : 50px;
+                padding-top : 15px;
+                padding-bottom: 15px;
+                color: white;
+                border-radius: 10px;
+            }
+            .btn4:hover{
+                border-color: white;
+                box-shadow: 0px 0px 30px white;
+            }
+            /* Title Styling */
+            .x-container{
+                display : none;
+                background-color: rgb(214, 224, 221);
+                margin-left : 20px;
+                margin-right : 20px;
+                padding-left : 30px;
+                padding-right:30px;
+                padding-bottom: 40px;
+            }
+            .x-title {
+                position: relative;
+                left : 40%;
+                top:10px;
+                font-size: 24px;
+                color: #0d0c0c;
+                margin-top:20px;
+                margin-bottom: 20px;
+                text-align: center;
+                border: solid;
+                width :200px;
+                padding-top:10px;
+                padding-bottom : 10px;
+            }
+
+            /* Input Fields */
+            .x-input {
+                width: 100%;
+                padding: 10px;
+                margin: 10px 0;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                font-size: 16px;
+            }
+
+            /* Signup Button */
+            .x-button {
+                width: 100%;
+                padding: 10px;
+                background:dodgerblue;
+                color: #fff;
+                border: none;
+                border-radius: 5px;
+                font-size: 18px;
+                cursor: pointer;
+                margin-top: 10px;
+            }
+
+            .x-button:hover {
+                background:MediumTurquoise;
+            }
+            /* Styling the login container */
+            .y-container {
+                display : none;
+                width: 100%;
+                max-width: 350px;
+                margin: 60px auto;
+                background:lightblue;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                text-align: center;
+            }
+
+            /* Title Styling */
+            .y-title {
+                font-size: 24px;
+                color: #333;
+                margin-bottom: 20px;
+            }           
+
+            /* Input Fields */
+            .y-input {
+                width: 100%;
+                padding: 10px;
+                margin: 10px 0;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                font-size: 16px;
+            }
+
+            /* Login Button */
+            .y-button {
+                width: 100%;
+                padding: 10px;
+                background:hotpink;
+                color: #fff;
+                border: none;
+                border-radius: 5px;
+                font-size: 18px;
+                cursor: pointer;
+                margin-top: 10px;
+            }
+            .y-button:hover { 
+                background: lightpink; 
+            }
+            /* Container for the shopping page */
+            .shop-container {
+                display :block;
+                width: 90%;
+                max-width: 1200px;
+                margin: 20px auto;
+                text-align: center;
+            }
+
+            /* Grid layout for products */
+            .shop-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 20px;
+            }
+
+            /* Individual product card */
+            .shop-product {
+                background: #fff;
+                padding: 15px;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s ease;
+            }
+
+            .shop-product:hover {
+                transform: scale(1.05);
+            }
+
+            /* Product image */
+            .shop-img {
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+                border-radius: 10px;
+            }
+
+            /* Product name */
+            .shop-name {
+                font-size: 18px;
+                font-weight: bold;
+                margin: 10px 0;
+            }
+
+            /* Product price */
+            .shop-price {
+                font-size: 16px;
+                color:magenta;
+                margin-bottom: 10px;
+            }
+
+            /* Add to Cart button */
+            .shop-btn {
+                background: rebeccapurple;
+                color: #fff;
+                padding: 10px;
+                width: 100%;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                font-size: 16px;
+            }
+
+            .shop-btn:hover {
+                background: mediumpurple;
+            } 
+
+            /* Container */
+            .z-container {
+                display : none;
+                position: relative;
+                left : 300px;
+                background-color: #fff;
+                width: 600px;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+
+            /* Title */
+            .z-cart-title {
+                text-align: center;
+                font-size: 24px;
+                margin-bottom: 20px;
+            }
+
+            /* Table */
+            .z-cart-table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-bottom: 20px;
+            }
+
+            .z-table-header {
+                text-align: left;
+                padding: 10px;
+                background-color: #f2f2f2;
+                font-weight: bold;
+            }
+
+            .z-cart-table td {
+                padding: 10px;
+                text-align: left;
+                border-bottom: 1px solid #ddd;
+            }
+
+            .z-cart-table .z-item-name {
+                font-weight: bold;
+            }
+
+            .z-cart-table .z-item-price, .z-cart-table .z-item-total {
+                color: #4CAF50;
+            }
+
+            /* Total */
+            .z-total {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 20px;
+            }
+
+            .z-total-label {
+                font-weight: bold;
+            }
+
+            .z-total-amount {
+                color: #333;
+            }
+
+            /* Pay Button */
+            .z-pay-button {
+                width: 100%;
+                padding: 10px;
+                background-color:darkcyan;
+                color: white;
+                border: none;
+                border-radius: 4px;
+                font-size: 16px;
+                cursor: pointer;
+            }
+
+            .z-pay-button:hover {
+                background-color: lightseagreen;
+            }
+            .abcd {
+                position:fixed;
+                animation: blinker 1s linear infinite;
+                bottom : 10px;
+                height : 60px;
+                width : 60px;
+                
+            }
+            .abc {
+                position:fixed;
+                animation: blinker 1s linear infinite;
+                bottom : 70px;
+                height : 60px;
+                width : 60px;
+                
+            }
+            @keyframes blinker {
+             20% { opacity: 0; } /* Make it disappear at 50% of the animation */
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <div class="logo">
+                <img class="logo" src="logo.png">
+            </div>
+            <button onclick="nav1()" class="btn1"><img src="bar.png"></button>
+            <a href="#"><button id ="b" class="btn2" onclick="loginon()">Login</button></a>
+            <a href="#"><button id= "c" class="btn3" onclick="signupon()">Signup</button></a>
+            <a href="#"><button id= "d" class="btn4" onclick="showcart()">Cart Page</button></a>
+        </div>
+        <div class="x-container" id="x">
+            <h2 class="x-title">Signup</h2>
+            <form>
+              <input type="text" id = "name" class="x-input" placeholder="Full Name" required>
+              <input type="text" id = "uname" class="x-input" placeholder="Username" required>
+              <input type="email" id = "email" class="x-input" placeholder="Email" required>
+              <input type="password" id="pwd" class="x-input" placeholder="Password" required>
+              <button type="submit" class="x-button" onclick="signupuser(); return false;">Sign Up</button>
+            </form>
+          </div>
+          <div class="y-container" id="y">
+            <h2 class="y-title">Login</h2>
+            <form>
+              <input type="text" id="luname" class="y-input" placeholder="Username" required>
+              <input type="password" id="lpwd" class="y-input" placeholder="Password" required>
+              <button type="submit" class="y-button" onclick="loginuser()">Login</button>
+            </form>
+          </div>
+          <div class="shop-container" id="shop-container">
+            <h2>Shop Products</h2>
+            <div class="shop-grid">
+              <div class="shop-product">
+                <img src="camera.png" class="shop-img" alt="Product 1">
+                <div class="shop-name">Camera</div>
+                <div class="shop-price">Rs 25000.00</div>
+                <button class="shop-btn" onclick="addtocart(['camera',25000])">Add to Cart</button>
+              </div>
+          
+              <div class="shop-product">
+                <img src="strap.png" class="shop-img" alt="Product 2">
+                <div class="shop-name">Camera Strap</div>
+                <div class="shop-price">Rs 300.00</div>
+                <button class="shop-btn" onclick="addtocart(['camera strap',300])">Add to Cart</button>
+              </div>
+          
+              <div class="shop-product">
+                <img src="tripod.png" class="shop-img" alt="Product 3">
+                <div class="shop-name">Tripod</div>
+                <div class="shop-price">Rs 799.00</div>
+                <button class="shop-btn" onclick="addtocart(['Tripod',799])">Add to Cart</button>
+              </div>
+          
+              <div class="shop-product">
+                <img src="bag.png" class="shop-img" alt="Product 4">
+                <div class="shop-name">Camera Bag</div>
+                <div class="shop-price">Rs 549.00</div>
+                <button class="shop-btn" onclick="addtocart(['camera bag',549])">Add to Cart</button>
+              </div>
+
+              <div class="shop-product">
+                <img src="lenshood.png" class="shop-img" alt="Product 5">
+                <div class="shop-name">Lenshood</div>
+                <div class="shop-price">Rs 2999.00</div>
+                <button class="shop-btn" onclick="addtocart(['lenshood',2999])">Add to Cart</button>
+              </div>
+
+              <div class="shop-product">
+                <img src="charger.png" class="shop-img" alt="Product 6">
+                <div class="shop-name">charger</div>
+                <div class="shop-price">Rs 1500.00</div>
+                <button class="shop-btn" onclick="addtocart(['charger',1500])">Add to Cart</button>
+              </div>
+
+              <div class="shop-product">
+                <img src="reflector.png" class="shop-img" alt="Product 7">
+                <div class="shop-name">Reflector</div>
+                <div class="shop-price">Rs 899.00</div>
+                <button class="shop-btn" onclick="addtocart(['reflector',899])">Add to Cart</button>
+              </div>
+
+              <div class="shop-product">
+                <img src="card.png" class="shop-img" alt="Product 8">
+                <div class="shop-name">Memory Card</div>
+                <div class="shop-price">Rs 4999.00</div>
+                <button class="shop-btn" onclick="addtocart(['card',4999])">Add to Cart</button>
+              </div>
+
+              <div class="shop-product">
+                <img src="ringlight.png" class="shop-img" alt="Product 9">
+                <div class="shop-name">Ring Light</div>
+                <div class="shop-price">Rs 900.00</div>
+                <button class="shop-btn" onclick="addtocart(['ringlight',900])">Add to Cart</button>
+              </div>
+
+              <div class="shop-product">
+                <img src="drone.png" class="shop-img" alt="Product 10">
+                <div class="shop-name">Drone</div>
+                <div class="shop-price">Rs 9999.00</div>
+                <button class="shop-btn" onclick="addtocart(['drone',9999])">Add to Cart</button>
+              </div>
+
+              <div class="shop-product">
+                <img src="filmRolls.png" class="shop-img" alt="Product 11">
+                <div class="shop-name">Film Rolls</div>
+                <div class="shop-price">Rs 799.00</div>
+                <button class="shop-btn" onclick="addtocart(['fimRolls',799])">Add to Cart</button>
+              </div>
+
+              <div class="shop-product">
+                <img src="Macrolens.png" class="shop-img" alt="Product 12">
+                <div class="shop-name">Macrolens</div>
+                <div class="shop-price">Rs 579.00</div>
+                <button class="shop-btn" onclick="addtocart(['Macrolens',579])">Add to Cart</button>
+              </div>
+
+              <div class="shop-product">
+                <img src="printer.png" class="shop-img" alt="Product 13">
+                <div class="shop-name">Printer</div>
+                <div class="shop-price">Rs 400.00</div>
+                <button class="shop-btn" onclick="addtocart(['printer',400])">Add to Cart</button>
+              </div>
+
+              <div class="shop-product">
+                <img src="camraHousings.png" class="shop-img" alt="Product 14">
+                <div class="shop-name">Camera Water Housing</div>
+                <div class="shop-price">Rs 399.00</div>
+                <button class="shop-btn" onclick="addtocart(['camraHousings',399])">Add to Cart</button>
+              </div>
+
+              <div class="shop-product">
+                <img src="audiorecorder.png" class="shop-img" alt="Product 15">
+                <div class="shop-name">AudioRecorder</div>
+                <div class="shop-price">Rs 549.00</div>
+                <button class="shop-btn" onclick="addtocart(['audiorecorder',549])">Add to Cart</button>
+              </div>
+
+              <div class="shop-product">
+                <img src="monitor.png" class="shop-img" alt="Product 16">
+                <div class="shop-name">Video Monitor</div>
+                <div class="shop-price">Rs 2500.00</div>
+                <button class="shop-btn" onclick="addtocart(['monitor',2500])">Add to Cart</button>
+              </div>
+
+            </div>
+          </div>
+          <div class="z-container" id="z-container">
+            <h1 class="z-cart-title">Shopping Cart</h1>
+            <table class="z-cart-table" id="cartTable">
+                <thead>
+                    <tr>
+                        <th class="z-table-header">Product Name</th>
+                        <th class="z-table-header">Price</th>
+                        <th class="z-table-header">Quantity</th>
+                    </tr>
+                </thead>
+                <tbody id="tc">
+                </tbody>
+            </table>
+            <div class="z-total">
+                <span class="z-total-label">Total:</span>
+                <span class="z-total-amount" id="totalAmount"></span>
+            </div>
+            <button class="z-pay-button" id="rzp-button" onclick="pay()">Pay Now</button>
+        </div>
+        <a href = "http://wa.me/918399283127"><img class ="abcd" src="img.png"></a>
+        <a href ="mailto:preethijarjapu@gmail.com"><img class ="abc" src="gmail.png"></a>
+    </body>
+    <script>
+        var userdetails = {};
+        var curruser = "";
+        var navdata = 0;
+        var signupdata = 0;
+        var logindata = 0;
+        var loginstatus = false;
+        var cartpage = 1;
+        var total = 0;
+        function addtocart(data) {
+        if (curruser == "") {
+            alert("Login to Select");
+        } else {
+            var found = false;
+            var cart = userdetails[curruser][3];
+
+            // Check if product is already in cart
+            for (let item of cart) {
+                if (item[0] === data[0]) {
+                    item[2] += 1; // Increase quantity
+                    found = true;
+                    break;
+                }
+            }
+
+            if (!found) {
+                data.push(1); // Add quantity as 1 for new items
+                cart.push(data);
+            }
+
+            console.log(userdetails);
+            alert("Product added to cart");
+        }
+    }
+
+
+        function nav1(){
+            if (navdata==0){
+                document.getElementById("b").style.display = "block";
+                document.getElementById("c").style.display = "block";
+                document.getElementById("d").style.display = "block";
+                navdata = 1;
+            }
+            else{
+                document.getElementById("b").style.display = "none";
+                document.getElementById("c").style.display = "none";
+                document.getElementById("d").style.display = "none";
+                navdata = 0;
+            }
+        }
+        function signupon(){
+            if (signupdata == 0){
+                document.getElementById("x").style.display = "block";
+                signupdata = 1;
+            }
+            else{
+                document.getElementById("x").style.display = "none";
+                signupdata = 0;
+            }
+        }
+        function loginon(){
+            if(logindata==0){
+                if (signupdata==1){
+                    document.getElementById("x").style.display = "none";
+                    signupdata = 0;
+                }
+                document.getElementById("y").style.display = "block";
+                logindata = 1;
+            }
+            else{
+                document.getElementById("y").style.display = "none";
+                logindata = 0;
+            }
+        }
+        function signupuser(){
+            var name = document.getElementById("name").value;
+            var uname = document.getElementById("uname").value;
+            var email = document.getElementById("email").value;
+            var pwd = document.getElementById("pwd").value;
+            console.log(name);
+            console.log(uname);
+            console.log(email);
+            console.log(pwd);
+            userdetails[uname] = [];
+            userdetails[uname].push(name);
+            userdetails[uname].push(email);
+            userdetails[uname].push(pwd);
+            userdetails[uname].push([]);
+            console.log(userdetails);
+            alert("Signup Sucessfully Done");
+        }
+        function loginuser(){
+            var uname = document.getElementById("luname").value;
+            var pwd = document.getElementById("lpwd").value;
+            console.log(uname);
+            console.log(pwd);
+            for (var key in userdetails){
+                if (key == uname){
+                    if (userdetails[uname][2]==pwd){
+                        loginstatus = true;
+                        document.getElementById("y").style.display = "none";
+                        logindata = 0;
+                        curruser = uname;
+                        alert("Login Sucessfull !");
+                    }
+                    else{
+                        alert("Check Your Password");
+                    }
+                }
+            }
+            if (loginstatus == false){
+                alert("No user Exist !");
+            }
+        }
+        function showcart() {
+        if (cartpage == 1) {
+            document.getElementById("shop-container").style.display = "none";
+        }
+        document.getElementById("z-container").style.display = "block";
+        document.getElementById("tc").innerHTML = ""; // Clear previous cart data
+        total = 0;
+
+        var orders = userdetails[curruser][3];
+
+        for (var item of orders) {
+            var row = document.createElement("tr");
+
+            var nameCell = document.createElement("td");
+            nameCell.textContent = item[0];
+            row.appendChild(nameCell);
+
+            var priceCell = document.createElement("td");
+            priceCell.textContent = item[1];
+            row.appendChild(priceCell);
+
+            var qtyCell = document.createElement("td");
+            qtyCell.textContent = item[2];
+            row.appendChild(qtyCell);
+
+            total += item[1] * item[2];
+
+            document.getElementById("tc").appendChild(row);
+        }
+        document.getElementById("totalAmount").innerHTML = total;
+    }
+        function pay(){
+            var options = {
+                key : "rzp_test_uWXUS9CmbPx9dh",
+                amount : total * 100,
+                currency : "INR",
+                description : "Payment For camera shop products",
+                image : "logo.png",
+                handler : function(response){
+                    alert("Payment Done Sucessfully");
+                    document.getElementById("z-container").style.display = "none";
+                    document.getElementById("shop-container").style.display = "block";
+                },
+                prefill:{
+                    contact : '8327993128'
+                },
+                theme:{
+                    color : "darksalmon"
+                }
+            };
+            document.getElementById("rzp-button").onclick = function(e){
+                var rzp = new Razorpay(options);
+                rzp.on("payment.failed",function(response){
+                    alert("Payment Failed !");
+                });
+                rzp.open();
+                e.preventDefault();
+            };
+        }
+    </script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</html>
